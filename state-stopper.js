@@ -1,6 +1,6 @@
 angular.module('state-stopper', ['ui.router'])
 .run(['$rootScope', '$state', function($rootScope, $state) {
-	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams,) {
+	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 		toState.$stoppables = [];
 
 		angular.forEach($state.$current.locals.resolve.$$values, function(resolvedValue) {
